@@ -1,209 +1,742 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>As Músicas da Sara</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fffaf6;
-      color: #2d2d2d;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      background: #f3d8cf;
-      padding: 70px 20px;
-      text-align: center;
-    }
+<title>As Músicas da Sara | Educação Musical</title>
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
+<meta name="description"
+content="As Músicas da Sara — educação musical para bebés, crianças, famílias, creches, jardins de infância e escolas. Projeto pedagógico Ninhos de Música.">
 
-    header p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 15px auto 0;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    nav {
-      background: #ffffff;
-      text-align: center;
-      padding: 18px;
-      position: sticky;
-      top: 0;
-      border-bottom: 1px solid #eee;
-    }
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
-    nav a {
-      color: #333;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+<style>
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 25px;
-    }
+:root{
+  --cream:#fff9f2;
+  --paper:#ffffff;
+  --terracotta:#d98569;
+  --rose:#f0c8bf;
+  --sage:#bacab5;
+  --green:#647b62;
+  --plum:#503744;
+  --text:#30292c;
+  --soft:#756c70;
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+*{
+  box-sizing:border-box;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      margin: 25px 0;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .highlight {
-      background: #e8efe4;
-    }
+body{
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.7;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 13px 24px;
-      background: #2d2d2d;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-    }
+img{
+  max-width:100%;
+  display:block;
+}
 
-    footer {
-      background: #2d2d2d;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-  </style>
+a{
+  color:inherit;
+}
+
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,249,242,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(80,55,68,.1);
+}
+
+.nav-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:14px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+.logo{
+  font-family:"Playfair Display",serif;
+  font-size:1.35rem;
+  font-weight:600;
+  color:var(--plum);
+}
+
+.nav-links{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-size:.92rem;
+  font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+  min-height:82vh;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  max-width:1250px;
+  margin:auto;
+  align-items:center;
+  padding:60px 35px 80px;
+  gap:60px;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--terracotta);
+}
+
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(3.2rem,7vw,6.2rem);
+  line-height:.95;
+  margin:18px 0 24px;
+  color:var(--plum);
+}
+
+.hero h1 span{
+  font-style:italic;
+  color:var(--terracotta);
+}
+
+.hero p{
+  font-size:1.2rem;
+  max-width:610px;
+  color:var(--soft);
+}
+
+.hero-image{
+  min-height:580px;
+  border-radius:48% 48% 25px 25px;
+  overflow:hidden;
+  background:var(--rose);
+  position:relative;
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  min-height:580px;
+  object-fit:cover;
+}
+
+.image-placeholder{
+  width:100%;
+  min-height:580px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  color:var(--plum);
+  background:
+  radial-gradient(circle at 20% 20%, #f4ddd2, transparent 30%),
+  linear-gradient(145deg,var(--rose),#f8e8d9);
+}
+
+.button{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 25px;
+  border-radius:999px;
+  background:var(--plum);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.button.light{
+  background:white;
+  color:var(--plum);
+}
+
+/* GENERAL */
+
+section{
+  padding:95px 25px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.section-title{
+  max-width:730px;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-family:"Playfair Display",serif;
+  color:var(--plum);
+  font-size:clamp(2.5rem,5vw,4rem);
+  line-height:1.05;
+  margin:10px 0 20px;
+}
+
+.section-title p{
+  color:var(--soft);
+  font-size:1.1rem;
+}
+
+/* NINHOS */
+
+.ninhos{
+  background:var(--sage);
+}
+
+.ninhos-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+
+.ninhos-card{
+  background:rgba(255,255,255,.72);
+  padding:45px;
+  border-radius:30px;
+}
+
+.ninhos-card h3{
+  font-family:"Playfair Display",serif;
+  color:var(--plum);
+  font-size:2rem;
+}
+
+.tags{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.tag{
+  border:1px solid rgba(80,55,68,.25);
+  border-radius:999px;
+  padding:7px 13px;
+  font-size:.86rem;
+}
+
+/* VIDEO */
+
+.video-section{
+  background:var(--plum);
+  color:white;
+}
+
+.video-section .section-title h2,
+.video-section .section-title p{
+  color:white;
+}
+
+.video-wrapper{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:28px;
+  background:#191417;
+}
+
+.video-wrapper iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:0;
+  left:0;
+  top:0;
+}
+
+/* GALERIA */
+
+.gallery{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-auto-rows:270px;
+  gap:15px;
+}
+
+.photo{
+  border-radius:24px;
+  overflow:hidden;
+  background:#e9d9cf;
+}
+
+.photo:first-child{
+  grid-row:span 2;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.photo-placeholder{
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  color:var(--soft);
+}
+
+/* SERVIÇOS */
+
+.services{
+  background:#f5e6dd;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:white;
+  border-radius:26px;
+  padding:32px;
+}
+
+.card .number{
+  color:var(--terracotta);
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.card h3{
+  font-family:"Playfair Display",serif;
+  color:var(--plum);
+  font-size:1.65rem;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--soft);
+}
+
+/* PREÇOS */
+
+.prices{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.price{
+  padding:35px;
+  border:1px solid rgba(80,55,68,.15);
+  background:white;
+  border-radius:28px;
+}
+
+.price.highlight{
+  background:var(--plum);
+  color:white;
+  transform:translateY(-10px);
+}
+
+.price h3{
+  font-family:"Playfair Display",serif;
+  font-size:1.7rem;
+}
+
+.price-value{
+  font-size:2rem;
+  font-weight:700;
+  margin:20px 0 5px;
+}
+
+.price small{
+  color:var(--soft);
+}
+
+.price.highlight small{
+  color:#ddd1d7;
+}
+
+/* FEEDBACK */
+
+.feedback{
+  background:var(--terracotta);
+}
+
+.feedback .section-title h2,
+.feedback .section-title p{
+  color:white;
+}
+
+.quotes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.quote{
+  background:white;
+  padding:32px;
+  border-radius:26px;
+}
+
+.quote p{
+  font-family:"Playfair Display",serif;
+  font-size:1.25rem;
+  line-height:1.5;
+}
+
+.quote strong{
+  display:block;
+  margin-top:22px;
+  font-family:"DM Sans",sans-serif;
+  font-size:.9rem;
+}
+
+/* SOBRE */
+
+.about{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-photo{
+  min-height:520px;
+  border-radius:28px;
+  overflow:hidden;
+  background:var(--rose);
+}
+
+.about-photo img{
+  min-height:520px;
+  width:100%;
+  object-fit:cover;
+}
+
+.about h2{
+  font-family:"Playfair Display",serif;
+  font-size:3.4rem;
+  color:var(--plum);
+}
+
+/* CTA */
+
+.cta{
+  margin:50px auto;
+  max-width:1100px;
+  background:var(--green);
+  padding:65px;
+  color:white;
+  border-radius:35px;
+  text-align:center;
+}
+
+.cta h2{
+  font-family:"Playfair Display",serif;
+  font-size:3rem;
+  margin:0 0 15px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:50px 25px;
+  background:#241c20;
+  color:#eee;
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+footer a{
+  color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:45px;
+  }
+
+  .hero-image,
+  .hero-image img,
+  .image-placeholder{
+    min-height:430px;
+  }
+
+  .ninhos-grid,
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .cards,
+  .prices,
+  .quotes{
+    grid-template-columns:1fr;
+  }
+
+  .price.highlight{
+    transform:none;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .photo:first-child{
+    grid-column:span 2;
+    grid-row:auto;
+  }
+
+  .cta{
+    margin:20px;
+    padding:45px 25px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>As Músicas da Sara</h1>
-  <p>
-    Música para crescer, descobrir, brincar e criar.
-    Projetos de educação musical para bebés, crianças, famílias e instituições.
-  </p>
-</header>
-
 <nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#ninhos">Ninhos de Música</a>
-  <a href="#servicos">Serviços</a>
-  <a href="#contactos">Contactos</a>
+  <div class="nav-inner">
+
+    <div class="logo">
+      As Músicas da Sara
+    </div>
+
+    <div class="nav-links">
+      <a href="#ninhos">Ninhos de Música</a>
+      <a href="#video">Ver</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Preçário</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#sobre">Sobre</a>
+    </div>
+
+  </div>
 </nav>
 
-<section id="sobre">
-  <h2>Olá, sou a Sara</h2>
 
-  <p>
-    Sou professora de música, cantora e criadora de projetos de educação musical.
-    Desenvolvo experiências musicais pensadas para acompanhar cada fase do crescimento,
-    desde os primeiros meses de vida até à infância.
-  </p>
+<header class="hero">
 
-  <p>
-    Acredito na música como espaço de relação, descoberta, expressão, imaginação e vínculo.
-    Nas minhas sessões, a voz, o movimento, os instrumentos, o ritmo e a escuta tornam-se
-    formas naturais de brincar e aprender.
-  </p>
+  <div>
+
+    <div class="eyebrow">
+      Educação Musical · Algarve
+    </div>
+
+    <h1>
+      Música para<br>
+      <span>crescer.</span>
+    </h1>
+
+    <p>
+      Experiências de música pensadas para bebés, crianças,
+      famílias, creches, jardins de infância e escolas.
+      Um espaço onde se canta, dança, escuta, brinca e descobre.
+    </p>
+
+    <a class="button" href="#ninhos">
+      Conhecer o projeto
+    </a>
+
+  </div>
+
+
+  <div class="hero-image">
+
+    <!--
+    MAIS TARDE TROCAMOS ESTA ÁREA POR:
+    <img src="sara-criancas.jpg" alt="Sessão de música com crianças">
+    -->
+
+    <div class="image-placeholder">
+      Aqui colocaremos uma fotografia tua numa sessão com crianças
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<section id="ninhos" class="ninhos">
+
+<div class="container ninhos-grid">
+
+  <div>
+
+    <div class="eyebrow">
+      Projeto pedagógico
+    </div>
+
+    <div class="section-title">
+
+      <h2>
+        Ninhos de Música
+      </h2>
+
+      <p>
+        Um lugar musical onde cada criança pode escutar,
+        experimentar, comunicar e crescer ao seu próprio ritmo.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="ninhos-card">
+
+    <p>
+      <strong>Ninhos de Música</strong> é um projeto de educação musical
+      dirigido à primeira infância, desenvolvido a partir da relação
+      entre música, corpo, movimento, voz, escuta e vínculo.
+    </p>
+
+    <p>
+      As sessões são adaptadas às diferentes fases de desenvolvimento
+      e combinam canções, exploração instrumental, jogos rítmicos,
+      movimento, histórias sonoras, improvisação e momentos de escuta.
+    </p>
+
+    <p>
+      Mais do que ensinar música, pretende-se criar condições para que
+      a criança <strong>viva a música</strong>: experimentando,
+      comunicando, criando e descobrindo.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Voz</span>
+      <span class="tag">Movimento</span>
+      <span class="tag">Ritmo</span>
+      <span class="tag">Instrumentos</span>
+      <span class="tag">Escuta</span>
+      <span class="tag">Criatividade</span>
+      <span class="tag">Vínculo</span>
+    </div>
+
+  </div>
+
+</div>
+
 </section>
 
-<section id="ninhos">
-  <div class="card highlight">
-    <h2>Ninhos de Música</h2>
+
+
+<section id="video" class="video-section">
+
+<div class="container">
+
+  <div class="section-title">
+
+    <div class="eyebrow">
+      Ver e ouvir
+    </div>
+
+    <h2>
+      Um bocadinho do que acontece num Ninho.
+    </h2>
 
     <p>
-      <strong>Ninhos de Música</strong> é um projeto pedagógico de educação musical
-      pensado para bebés e crianças pequenas, em contexto de berçário, creche,
-      jardim de infância e atividades em família.
+      Música não se explica apenas. Vive-se.
     </p>
 
-    <p>
-      Cada sessão é adaptada às diferentes idades e fases de desenvolvimento,
-      criando um ambiente seguro, afetivo e estimulante onde as crianças podem
-      explorar a música através do corpo, da voz, do movimento e dos instrumentos.
-    </p>
-
-    <p>
-      Cantamos, escutamos, dançamos, experimentamos sons e descobrimos diferentes
-      formas de comunicar através da música.
-    </p>
   </div>
+
+
+  <div class="video-wrapper">
+
+    <!--
+    DEPOIS COLOCAMOS AQUI O TEU VÍDEO DO YOUTUBE/VIMEO.
+
+    Exemplo:
+    https://www.youtube.com/watch?v=ABC123
+
+    O ABC123 é colocado abaixo.
+    -->
+
+    <iframe
+    src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO"
+    title="Ninhos de Música"
+    allowfullscreen>
+    </iframe>
+
+  </div>
+
+</div>
+
 </section>
 
-<section id="servicos">
-  <h2>Serviços</h2>
 
-  <div class="card">
-    <h3>Berçário e Creche</h3>
-    <p>
-      Sessões musicais para bebés e crianças pequenas, com exploração vocal,
-      sensorial, rítmica e corporal.
-    </p>
+
+<section>
+
+<div class="container">
+
+  <div class="section-title">
+
+    <div class="eyebrow">
+      Por dentro das sessões
+    </div>
+
+    <h2>
+      Música feita de encontros.
+    </h2>
+
   </div>
 
-  <div class="card">
-    <h3>Jardim de Infância</h3>
-    <p>
-      Atividades de educação musical através do canto, instrumentos,
-      movimento, histórias sonoras e jogos musicais.
-    </p>
-  </div>
 
-  <div class="card">
-    <h3>Música para Pais e Filhos</h3>
-    <p>
-      Momentos musicais partilhados entre crianças e adultos,
-      promovendo vínculo, expressão e descoberta em família.
-    </p>
-  </div>
+  <div class="gallery">
 
-  <div class="card">
-    <h3>Projetos para Escolas e Instituições</h3>
-    <p>
-      Programas regulares, oficinas, atividades temáticas e projetos
-      musicais personalizados para escolas, associações e outras instituições.
-    </p>
-  </div>
-</section>
-
-<section id="contactos">
-  <h2>Vamos fazer música juntos?</h2>
-
-  <p>
-    Para informações sobre aulas, projetos, parcerias ou propostas para escolas
-    e instituições, entre em contacto.
-  </p>
-
-  <p>
-    <strong>Email:</strong> associacaoculturaleiraviva@gmail.com
-  </p>
-
-  <p>
-    <strong>Telefone:</strong> 960 135 508
-  </p>
-
-  <a class="button" href="mailto:associacaoculturaleiraviva@gmail.com">
-    Contactar
-  </a>
-</section>
-
-<footer>
-  <p>© 2026 As Músicas da Sara · Educação Musical</p>
-</footer>
-
-</body>
-</html>
+    <div class="photo">
+      <div class="photo-placeholder">
+        FOTO 
