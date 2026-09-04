@@ -105,6 +105,10 @@ nav{
   gap:60px;
 }
 
+.hero-content{
+  min-width:0;
+}
+
 .eyebrow{
   text-transform:uppercase;
   letter-spacing:.16em;
@@ -133,7 +137,9 @@ nav{
 }
 
 .hero-image{
+  width:100%;
   min-height:560px;
+  height:560px;
   border-radius:48% 48% 25px 25px;
   overflow:hidden;
   background:var(--rose);
@@ -141,19 +147,9 @@ nav{
 
 .hero-image img{
   width:100%;
-  height:560px;
+  height:100%;
   object-fit:cover;
-}
-
-.placeholder{
-  min-height:560px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:30px;
-  color:var(--plum);
-  background:linear-gradient(145deg,#f2d0c8,#f9e7d7);
+  object-position:center;
 }
 
 .button{
@@ -177,7 +173,7 @@ nav{
   color:var(--plum);
 }
 
-/* GENERAL */
+/* GERAL */
 
 section{
   padding:95px 25px;
@@ -252,12 +248,21 @@ section{
 }
 
 .video-wrapper{
-<div class="video-wrapper">
-  <video controls playsinline preload="metadata">
-    <source src="Ninhos de Música - Teaser.mp4" type="video/mp4">
-    O seu navegador não suporta vídeo HTML5.
-  </video>
-</div>
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+  border-radius:30px;
+  overflow:hidden;
+  background:#21191d;
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+
+.video-wrapper video{
+  display:block;
+  width:100%;
+  height:auto;
+  background:#000;
+}
 
 /* GALERIA */
 
@@ -422,8 +427,15 @@ section{
   object-fit:cover;
 }
 
-.about-photo .placeholder{
+.about-placeholder{
   min-height:500px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  color:var(--plum);
+  background:linear-gradient(145deg,#f2d0c8,#f9e7d7);
 }
 
 .about h2{
@@ -494,6 +506,11 @@ footer{
     padding-top:45px;
   }
 
+  .hero-image{
+    height:430px;
+    min-height:430px;
+  }
+
   .ninhos-grid,
   .about{
     grid-template-columns:1fr;
@@ -512,6 +529,26 @@ footer{
     grid-column:span 2;
     grid-row:auto;
   }
+}
+
+@media(max-width:600px){
+
+  .hero{
+    padding:45px 20px 60px;
+    gap:35px;
+  }
+
+  .hero h1{
+    font-size:3.7rem;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .photo:first-child{
+    grid-column:auto;
+  }
 
 }
 
@@ -521,622 +558,623 @@ footer{
 <body>
 
 <nav>
-<div class="nav-inner">
+  <div class="nav-inner">
 
-<div class="logo">As Músicas da Sara</div>
+    <div class="logo">As Músicas da Sara</div>
 
-<div class="nav-links">
-<a href="#ninhos">Ninhos de Música</a>
-<a href="#video">Vídeo</a>
-<a href="#servicos">Serviços & Preços</a>
-<a href="#feedback">Feedback</a>
-<a href="#sobre">Sara</a>
-<a href="#contacto">Contacto</a>
-</div>
+    <div class="nav-links">
+      <a href="#ninhos">Ninhos de Música</a>
+      <a href="#video">Vídeo</a>
+      <a href="#servicos">Serviços & Preços</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#sobre">Sara</a>
+      <a href="#contacto">Contacto</a>
+    </div>
 
-</div>
+  </div>
 </nav>
 
 
 <header class="hero">
 
-<div>
+  <div class="hero-content">
 
-<div class="eyebrow">Educação Musical · Algarve</div>
+    <div class="eyebrow">Educação Musical · Algarve</div>
 
-<h1>
-Música para<br>
-<span>crescer.</span>
-</h1>
+    <h1>
+      Música para<br>
+      <span>crescer.</span>
+    </h1>
 
-<p>
-Experiências musicais para bebés, crianças, famílias,
-creches, jardins de infância e escolas.
-Um espaço para cantar, ouvir, tocar, dançar, brincar e criar.
-</p>
+    <p>
+      Experiências musicais para bebés, crianças, famílias,
+      creches, jardins de infância e escolas.
+      Um espaço para cantar, ouvir, tocar, dançar, brincar e criar.
+    </p>
 
-<a class="button" href="#ninhos">
-Descobrir Ninhos de Música
-</a>
+    <a class="button" href="#ninhos">
+      Descobrir Ninhos de Música
+    </a>
 
-<div class="hero-image">
-  <img src="WhatsApp Image 2026-01-19 at 15.13.20.jpeg"
-       alt="As Músicas da Sara - Educação Musical">
-</div>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="WhatsApp Image 2026-01-19 at 15.13.20.jpeg"
+      alt="As Músicas da Sara - Educação Musical">
+  </div>
 
 </header>
 
 
 <section id="ninhos" class="ninhos">
 
-<div class="container ninhos-grid">
+  <div class="container ninhos-grid">
 
-<div>
+    <div>
 
-<div class="eyebrow">Projeto pedagógico</div>
+      <div class="eyebrow">Projeto pedagógico</div>
 
-<div class="section-title">
+      <div class="section-title">
 
-<h2>Ninhos de Música</h2>
+        <h2>Ninhos de Música</h2>
 
-<p>
-Um espaço de descoberta onde a criança é convidada
-a experimentar a música com todo o corpo.
-</p>
+        <p>
+          Um espaço de descoberta onde a criança é convidada
+          a experimentar a música com todo o corpo.
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
 
-<div class="ninhos-card">
+    <div class="ninhos-card">
 
-<p>
-<strong>Ninhos de Música</strong> é um projeto de educação musical
-para a primeira infância que parte da relação entre
-<strong>voz, corpo, movimento, ritmo, escuta e vínculo.</strong>
-</p>
+      <p>
+        <strong>Ninhos de Música</strong> é um projeto de educação musical
+        para a primeira infância que parte da relação entre
+        <strong>voz, corpo, movimento, ritmo, escuta e vínculo.</strong>
+      </p>
 
-<p>
-As sessões são adaptadas às diferentes fases de desenvolvimento
-e combinam canções, instrumentos, jogos musicais, movimento,
-histórias sonoras, improvisação e exploração livre.
-</p>
+      <p>
+        As sessões são adaptadas às diferentes fases de desenvolvimento
+        e combinam canções, instrumentos, jogos musicais, movimento,
+        histórias sonoras, improvisação e exploração livre.
+      </p>
 
-<p>
-Mais do que ensinar música, queremos criar oportunidades
-para que cada criança possa <strong>viver a música</strong> —
-escutando, comunicando, imaginando, criando e relacionando-se.
-</p>
+      <p>
+        Mais do que ensinar música, queremos criar oportunidades
+        para que cada criança possa <strong>viver a música</strong> —
+        escutando, comunicando, imaginando, criando e relacionando-se.
+      </p>
 
-<div class="tags">
-<span class="tag">Voz</span>
-<span class="tag">Ritmo</span>
-<span class="tag">Movimento</span>
-<span class="tag">Escuta</span>
-<span class="tag">Instrumentos</span>
-<span class="tag">Criatividade</span>
-<span class="tag">Vínculo</span>
-</div>
+      <div class="tags">
+        <span class="tag">Voz</span>
+        <span class="tag">Ritmo</span>
+        <span class="tag">Movimento</span>
+        <span class="tag">Escuta</span>
+        <span class="tag">Instrumentos</span>
+        <span class="tag">Criatividade</span>
+        <span class="tag">Vínculo</span>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
 <section id="video" class="video-section">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<div class="eyebrow">Ver e ouvir</div>
+      <div class="eyebrow">Ver e ouvir</div>
 
-<h2>Como é um Ninho de Música?</h2>
+      <h2>Como é um Ninho de Música?</h2>
 
-<p>
-Há experiências que se percebem melhor quando as vemos acontecer.
-</p>
+      <p>
+        Há experiências que se percebem melhor quando as vemos acontecer.
+      </p>
 
-</div>
+    </div>
 
+    <div class="video-wrapper">
 
-<div class="video-wrapper">
+      <video controls playsinline preload="metadata">
+        <source src="Ninhos de Música - Teaser.mp4" type="video/mp4">
+        O seu navegador não suporta vídeo HTML5.
+      </video>
 
-<video controls playsinline preload="metadata">
-  <source src="Ninhos de Música - Teaser.mp4" type="video/mp4">
-  O seu navegador não suporta vídeo HTML5.
-</video>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
 <section>
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<div class="eyebrow">Por dentro dos Ninhos</div>
+      <div class="eyebrow">Por dentro dos Ninhos</div>
 
-<h2>Música feita de encontros.</h2>
+      <h2>Música feita de encontros.</h2>
 
-<p>
-Momentos das sessões com bebés, crianças, educadores e famílias.
-</p>
+      <p>
+        Momentos das sessões com bebés, crianças, educadores e famílias.
+      </p>
 
-</div>
+    </div>
 
+    <div class="gallery">
 
-<div class="gallery">
+      <div class="photo">
+        <div class="photo-space">FOTOGRAFIA 1</div>
+      </div>
 
-<div class="photo">
-<div class="photo-space">FOTOGRAFIA 1</div>
-</div>
+      <div class="photo">
+        <div class="photo-space">FOTOGRAFIA 2</div>
+      </div>
 
-<div class="photo">
-<div class="photo-space">FOTOGRAFIA 2</div>
-</div>
+      <div class="photo">
+        <div class="photo-space">FOTOGRAFIA 3</div>
+      </div>
 
-<div class="photo">
-<div class="photo-space">FOTOGRAFIA 3</div>
-</div>
+      <div class="photo">
+        <div class="photo-space">FOTOGRAFIA 4</div>
+      </div>
 
-<div class="photo">
-<div class="photo-space">FOTOGRAFIA 4</div>
-</div>
+      <div class="photo">
+        <div class="photo-space">FOTOGRAFIA 5</div>
+      </div>
 
-<div class="photo">
-<div class="photo-space">FOTOGRAFIA 5</div>
-</div>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
 <section id="servicos" class="services">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<div class="eyebrow">Serviços & Preçário</div>
+      <div class="eyebrow">Serviços & Preçário</div>
 
-<h2>Propostas musicais para escolas, famílias e instituições.</h2>
+      <h2>Propostas musicais para escolas, famílias e instituições.</h2>
 
-<p>
-Sessões regulares, atividades temáticas, formação e experiências
-musicais criadas para diferentes contextos e idades.
-</p>
+      <p>
+        Sessões regulares, atividades temáticas, formação e experiências
+        musicais criadas para diferentes contextos e idades.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="services-grid">
+    <div class="services-grid">
 
 
-<div class="service-card">
+      <div class="service-card">
 
-<div>
+        <div>
 
-<div class="service-number">01 · PROJETO REGULAR</div>
+          <div class="service-number">01 · PROJETO REGULAR</div>
 
-<h3>Ninhos de Música</h3>
+          <h3>Ninhos de Música</h3>
 
-<p>
-Sessões regulares de educação musical para berçário,
-creche e jardim de infância, adaptadas a cada faixa etária.
-</p>
+          <p>
+            Sessões regulares de educação musical para berçário,
+            creche e jardim de infância, adaptadas a cada faixa etária.
+          </p>
 
-<p>
-Voz, ritmo, instrumentos, movimento, escuta,
-jogos musicais e exploração sonora.
-</p>
+          <p>
+            Voz, ritmo, instrumentos, movimento, escuta,
+            jogos musicais e exploração sonora.
+          </p>
 
-</div>
+        </div>
 
-<div>
-<div class="service-price">Proposta personalizada</div>
+        <div>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=Ninhos%20de%20Música%20-%20Pedido%20de%20proposta">
-Pedir proposta
-</a>
-</div>
+          <div class="service-price">Proposta personalizada</div>
 
-</div>
+          <a class="button"
+          href="mailto:asmusicasdasara@gmail.com?subject=Ninhos%20de%20Música%20-%20Pedido%20de%20proposta">
+            Pedir proposta
+          </a>
 
+        </div>
 
-<div class="service-card">
+      </div>
 
-<div>
 
-<div class="service-number">02 · ATIVIDADE MENSAL</div>
+      <div class="service-card">
 
-<h3>Histórias & Músicas</h3>
+        <div>
 
-<p>
-Uma atividade mensal para instituições que cruza
-histórias, música, movimento e participação das crianças.
-</p>
+          <div class="service-number">02 · ATIVIDADE MENSAL</div>
 
-<p>
-As sessões abordam temas como ambiente,
-planeta, animais, corpo humano e emoções.
-</p>
+          <h3>Histórias & Músicas</h3>
 
-</div>
+          <p>
+            Uma atividade mensal para instituições que cruza
+            histórias, música, movimento e participação das crianças.
+          </p>
 
-<div>
+          <p>
+            As sessões abordam temas como ambiente,
+            planeta, animais, corpo humano e emoções.
+          </p>
 
-<div class="service-price">5€ / criança</div>
+        </div>
 
-<div class="service-note">1 sessão por mês</div>
+        <div>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=Histórias%20e%20Músicas%20-%20Pedido%20de%20informações">
-Pedir informações
-</a>
+          <div class="service-price">5€ / criança</div>
 
-</div>
+          <div class="service-note">1 sessão por mês</div>
 
-</div>
+          <a class="button"
+          href="mailto:asmusicasdasara@gmail.com?subject=Histórias%20e%20Músicas%20-%20Pedido%20de%20informações">
+            Pedir informações
+          </a>
 
+        </div>
 
-<div class="service-card feature-service">
+      </div>
 
-<div>
 
-<div class="service-number">03 · PACK ANUAL</div>
+      <div class="service-card feature-service">
 
-<h3>3 Histórias & Músicas</h3>
+        <div>
 
-<p>
-Pack de três sessões ou espetáculos interativos ao longo do ano letivo,
-com <strong>uma sessão por período</strong>.
-</p>
+          <div class="service-number">03 · PACK ANUAL</div>
 
-<p>
-Cada encontro é criado em torno de um tema sazonal,
-como Natal/Inverno, Páscoa/Primavera e final de ano/Verão.
-</p>
+          <h3>3 Histórias & Músicas</h3>
 
-</div>
+          <p>
+            Pack de três sessões ou espetáculos interativos ao longo do ano letivo,
+            com <strong>uma sessão por período</strong>.
+          </p>
 
-<div>
+          <p>
+            Cada encontro é criado em torno de um tema sazonal,
+            como Natal/Inverno, Páscoa/Primavera e final de ano/Verão.
+          </p>
 
-<div class="service-price">10€ / criança / sessão</div>
+        </div>
 
-<div class="service-note">
-3 sessões ao longo do ano letivo
-</div>
+        <div>
 
-<a class="button light"
-href="mailto:asmusicasdasara@gmail.com?subject=Pack%203%20Histórias%20e%20Músicas">
-Pedir proposta
-</a>
+          <div class="service-price">10€ / criança / sessão</div>
 
-</div>
+          <div class="service-note">
+            3 sessões ao longo do ano letivo
+          </div>
 
-</div>
+          <a class="button light"
+          href="mailto:asmusicasdasara@gmail.com?subject=Pack%203%20Histórias%20e%20Músicas">
+            Pedir proposta
+          </a>
 
+        </div>
 
-<div class="service-card">
+      </div>
 
-<div>
 
-<div class="service-number">04 · FORMAÇÃO</div>
+      <div class="service-card">
 
-<h3>Música na Primeira Infância</h3>
+        <div>
 
-<p>
-Formações práticas para professores, educadores
-e auxiliares que pretendam integrar a música
-de forma mais consciente e criativa no dia a dia educativo.
-</p>
+          <div class="service-number">04 · FORMAÇÃO</div>
 
-<p>
-Canções, ritmo, voz, movimento, exploração sonora,
-instrumentos e estratégias de dinamização de grupos.
-</p>
+          <h3>Música na Primeira Infância</h3>
 
-</div>
+          <p>
+            Formações práticas para professores, educadores
+            e auxiliares que pretendam integrar a música
+            de forma mais consciente e criativa no dia a dia educativo.
+          </p>
 
-<div>
+          <p>
+            Canções, ritmo, voz, movimento, exploração sonora,
+            instrumentos e estratégias de dinamização de grupos.
+          </p>
 
-<div class="service-price">50€ / hora</div>
+        </div>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=Formação%20-%20Música%20na%20Primeira%20Infância">
-Pedir formação
-</a>
+        <div>
 
-</div>
+          <div class="service-price">50€ / hora</div>
 
-</div>
+          <a class="button"
+          href="mailto:asmusicasdasara@gmail.com?subject=Formação%20-%20Música%20na%20Primeira%20Infância">
+            Pedir formação
+          </a>
 
+        </div>
 
-<div class="service-card">
+      </div>
 
-<div>
 
-<div class="service-number">05 · AULAS</div>
+      <div class="service-card">
 
-<h3>Primeiros Passos no Canto</h3>
+        <div>
 
-<p>
-Aulas semanais de canto, individuais ou em grupos de duas crianças,
-adaptadas à infância.
-</p>
+          <div class="service-number">05 · AULAS</div>
 
-<p>
-Um espaço para descobrir a voz através de canções,
-jogos vocais, ritmo, expressão corporal e interpretação.
-</p>
+          <h3>Primeiros Passos no Canto</h3>
 
-</div>
+          <p>
+            Aulas semanais de canto, individuais ou em grupos de duas crianças,
+            adaptadas à infância.
+          </p>
 
-<div>
+          <p>
+            Um espaço para descobrir a voz através de canções,
+            jogos vocais, ritmo, expressão corporal e interpretação.
+          </p>
 
-<div class="service-price">25€ / mês por criança</div>
+        </div>
 
-<div class="service-note">
-Aulas semanais
-</div>
+        <div>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=Aulas%20de%20Canto%20-%20Primeira%20Infância">
-Saber mais
-</a>
+          <div class="service-price">25€ / mês por criança</div>
 
-</div>
+          <div class="service-note">
+            Aulas semanais
+          </div>
 
-</div>
+          <a class="button"
+          href="mailto:asmusicasdasara@gmail.com?subject=Aulas%20de%20Canto%20-%20Primeira%20Infância">
+            Saber mais
+          </a>
 
+        </div>
 
-<div class="service-card">
+      </div>
 
-<div>
 
-<div class="service-number">06 · FAMÍLIAS</div>
+      <div class="service-card">
 
-<h3>Música em Família</h3>
+        <div>
 
-<p>
-Atividade musical especial para crianças e famílias,
-ideal para o Dia da Mãe, Dia do Pai ou outras datas significativas.
-</p>
+          <div class="service-number">06 · FAMÍLIAS</div>
 
-<p>
-Um momento de música, movimento, brincadeira,
-proximidade e descoberta partilhada.
-</p>
+          <h3>Música em Família</h3>
 
-</div>
+          <p>
+            Atividade musical especial para crianças e famílias,
+            ideal para o Dia da Mãe, Dia do Pai ou outras datas significativas.
+          </p>
 
-<div>
+          <p>
+            Um momento de música, movimento, brincadeira,
+            proximidade e descoberta partilhada.
+          </p>
 
-<div class="service-price">15€ / família</div>
+        </div>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=Música%20em%20Família%20-%20Atividade%20Especial">
-Pedir informações
-</a>
+        <div>
 
-</div>
+          <div class="service-price">15€ / família</div>
 
-</div>
+          <a class="button"
+          href="mailto:asmusicasdasara@gmail.com?subject=Música%20em%20Família%20-%20Atividade%20Especial">
+            Pedir informações
+          </a>
 
+        </div>
 
-<div class="service-card">
+      </div>
 
-<div>
 
-<div class="service-number">07 · FESTAS PARTICULARES</div>
+      <div class="service-card">
 
-<h3>Festas & Celebrações</h3>
+        <div>
 
-<p>
-Espetáculo ou atividade musical interativa criada especialmente
-para aniversários e festas particulares.
-</p>
+          <div class="service-number">07 · FESTAS PARTICULARES</div>
 
-<p>
-Pode incluir música, histórias, jogos,
-participação das crianças e caracterização temática,
-com figurino inspirado no universo ou personagem preferida da criança.
-</p>
+          <h3>Festas & Celebrações</h3>
 
-</div>
+          <p>
+            Espetáculo ou atividade musical interativa criada especialmente
+            para aniversários e festas particulares.
+          </p>
 
-<div>
+          <p>
+            Pode incluir música, histórias, jogos,
+            participação das crianças e caracterização temática,
+            com figurino inspirado no universo ou personagem preferida da criança.
+          </p>
 
-<div class="service-price">Sob consulta</div>
+        </div>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=Festas%20e%20Celebrações%20-%20Pedido%20de%20orçamento">
-Pedir orçamento
-</a>
+        <div>
 
-</div>
+          <div class="service-price">Sob consulta</div>
 
-</div>
+          <a class="button"
+          href="mailto:asmusicasdasara@gmail.com?subject=Festas%20e%20Celebrações%20-%20Pedido%20de%20orçamento">
+            Pedir orçamento
+          </a>
 
+        </div>
 
-</div>
+      </div>
 
-</div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
 <section id="feedback" class="feedback">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<div class="eyebrow">O que dizem de nós</div>
+      <div class="eyebrow">O que dizem de nós</div>
 
-<h2>Quem já fez música connosco.</h2>
+      <h2>Quem já fez música connosco.</h2>
 
-<p>
-Experiências partilhadas por famílias, educadores e instituições.
-</p>
+      <p>
+        Experiências partilhadas por famílias, educadores e instituições.
+      </p>
 
-</div>
-
-
-<div class="quotes">
+    </div>
 
 
-<div class="quote">
+    <div class="quotes">
 
-<p>
-“Colocaremos aqui um testemunho verdadeiro de uma mãe ou de um pai.”
-</p>
+      <div class="quote">
 
-<strong>— Família</strong>
+        <p>
+          “Colocaremos aqui um testemunho verdadeiro de uma mãe ou de um pai.”
+        </p>
 
-</div>
+        <strong>— Família</strong>
 
-
-<div class="quote">
-
-<p>
-“Colocaremos aqui o feedback de uma educadora, professora ou direção pedagógica.”
-</p>
-
-<strong>— Escola / Educadora</strong>
-
-</div>
+      </div>
 
 
-<div class="quote">
+      <div class="quote">
 
-<p>
-“Outro testemunho pode mostrar o impacto das sessões nas crianças e na instituição.”
-</p>
+        <p>
+          “Colocaremos aqui o feedback de uma educadora, professora ou direção pedagógica.”
+        </p>
 
-<strong>— Família / Instituição</strong>
+        <strong>— Escola / Educadora</strong>
 
-</div>
+      </div>
 
 
-</div>
+      <div class="quote">
 
-</div>
+        <p>
+          “Outro testemunho pode mostrar o impacto das sessões nas crianças e na instituição.”
+        </p>
+
+        <strong>— Família / Instituição</strong>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
 <section id="sobre">
 
-<div class="container about">
+  <div class="container about">
 
-<div class="about-photo">
+    <div class="about-photo">
 
-<div class="placeholder">
-FOTOGRAFIA DA SARA
-</div>
+      <div class="about-placeholder">
+        FOTOGRAFIA DA SARA
+      </div>
 
-</div>
+    </div>
 
 
-<div>
+    <div>
 
-<div class="eyebrow">Quem está por trás dos Ninhos?</div>
+      <div class="eyebrow">Quem está por trás dos Ninhos?</div>
 
-<h2>Olá, sou a Sara.</h2>
+      <h2>Olá, sou a Sara.</h2>
 
-<p>
-Sou professora de música, cantora e criadora.
-O meu trabalho cruza educação, performance,
-criação artística e projetos dirigidos à infância.
-</p>
+      <p>
+        Sou professora de música, cantora e criadora.
+        O meu trabalho cruza educação, performance,
+        criação artística e projetos dirigidos à infância.
+      </p>
 
-<p>
-Ao longo dos anos tenho trabalhado com crianças de diferentes idades,
-procurando sempre que a aprendizagem musical aconteça através
-da experiência, da curiosidade e da relação.
-</p>
+      <p>
+        Ao longo dos anos tenho trabalhado com crianças de diferentes idades,
+        procurando sempre que a aprendizagem musical aconteça através
+        da experiência, da curiosidade e da relação.
+      </p>
 
-<p>
-<strong>As Músicas da Sara</strong> nasce da vontade de criar
-experiências musicais cuidadas, criativas e próximas —
-em que cada criança possa encontrar a sua própria maneira
-de escutar e de fazer música.
-</p>
+      <p>
+        <strong>As Músicas da Sara</strong> nasce da vontade de criar
+        experiências musicais cuidadas, criativas e próximas —
+        em que cada criança possa encontrar a sua própria maneira
+        de escutar e de fazer música.
+      </p>
 
-<a class="button"
-href="mailto:asmusicasdasara@gmail.com?subject=As%20Músicas%20da%20Sara%20-%20Contacto">
-Falar comigo
-</a>
+      <a class="button"
+      href="mailto:asmusicasdasara@gmail.com?subject=As%20Músicas%20da%20Sara%20-%20Contacto">
+        Falar comigo
+      </a>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
 <div id="contacto" class="cta">
 
-<div class="eyebrow" style="color:white">
-Vamos conversar?
-</div>
+  <div class="eyebrow" style="color:white">
+    Vamos conversar?
+  </div>
 
-<h2>
-Quer levar a música à sua escola, instituição ou família?
-</h2>
+  <h2>
+    Quer levar a música à sua escola, instituição ou família?
+  </h2>
 
-<p>
-Para sessões regulares, oficinas, espetáculos,
-formação, atividades para famílias ou propostas personalizadas,
-entre em contacto.
-</p>
+  <p>
+    Para sessões regulares, oficinas, espetáculos,
+    formação, atividades para famílias ou propostas personalizadas,
+    entre em contacto.
+  </p>
 
-<a class="button light"
-href="mailto:asmusicasdasara@gmail.com?subject=As%20Músicas%20da%20Sara%20-%20Pedido%20de%20informações">
-Enviar email
-</a>
+  <a class="button light"
+  href="mailto:asmusicasdasara@gmail.com?subject=As%20Músicas%20da%20Sara%20-%20Pedido%20de%20informações">
+    Enviar email
+  </a>
 
-<p class="contact-email">
-asmusicasdasara@gmail.com
-</p>
+  <p class="contact-email">
+    asmusicasdasara@gmail.com
+  </p>
 
 </div>
 
 
 <footer>
 
-<div class="footer-inner">
+  <div class="footer-inner">
 
-<div>
-<strong>As Músicas da Sara</strong><br>
-Educação Musical · Algarve
-</div>
+    <div>
+      <strong>As Músicas da Sara</strong><br>
+      Educação Musical · Algarve
+    </div>
 
-<div>
-<a href="mailto:asmusicasdasara@gmail.com">
-asmusicasdasara@gmail.com
-</a>
-</div>
+    <div>
+      <a href="mailto:asmusicasdasara@gmail.com">
+        asmusicasdasara@gmail.com
+      </a>
+    </div>
 
-<div>
-© 2026 As Músicas da Sara
-</div>
+    <div>
+      © 2026 As Músicas da Sara
+    </div>
 
-</div>
+  </div>
 
 </footer>
 
